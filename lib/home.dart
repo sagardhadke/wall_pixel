@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wall_pixel/app_constants.dart';
 
 class MyHome extends StatelessWidget {
   const MyHome({super.key});
@@ -36,6 +37,27 @@ class MyHome extends StatelessWidget {
               Text(
                 "Best of the month",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 21),
+              ),
+              SizedBox(
+                height: 200,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: AppConstants.wallpapers.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(25),
+                        child: Image.asset(
+                          AppConstants.wallpapers[index],
+                          width: 150,
+                          height: 150,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    );
+                  },
+                ),
               )
             ],
           ),
