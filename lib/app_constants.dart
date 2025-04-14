@@ -23,4 +23,15 @@ class AppConstants {
     Color(0XFFF7E5D9),
     Color(0XFF055553),
   ];
+
+  static List<String> wallCategories = [
+    'Nature',
+    'Astronomy',
+    'Abstract',
+    'Animals',
+    'Minimalist',
+    'Sports',
+    'Motorcycles',
+    'Movies'
+  ];
 }
