@@ -58,7 +58,34 @@ class MyHome extends StatelessWidget {
                     );
                   },
                 ),
-              )
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Text(
+                "The color tone",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 21),
+              ),
+              SizedBox(
+                height: 50,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: AppConstants.colorsTones.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Padding(
+                      padding: const EdgeInsets.only(right: 8),
+                      child: Container(
+                        height: 45,
+                        width: 45,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: AppConstants.colorsTones[index],
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
             ],
           ),
         ),
