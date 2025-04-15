@@ -46,7 +46,6 @@ class MyHome extends StatelessWidget {
                 SizedBox(
                   height: 200,
                   child: ListView.builder(
-                    physics: NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     itemCount: AppConstants.wallpapers.length,
@@ -79,7 +78,6 @@ class MyHome extends StatelessWidget {
                 SizedBox(
                   height: 50,
                   child: ListView.builder(
-                    physics: NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     itemCount: AppConstants.colorsTones.length,
