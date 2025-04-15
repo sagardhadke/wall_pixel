@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wall_pixel/app_constants.dart';
+import 'package:wall_pixel/wall_preview.dart';
 
 class MyWallCategories extends StatelessWidget {
   const MyWallCategories({super.key});
@@ -43,12 +44,20 @@ class MyWallCategories extends StatelessWidget {
                       mainAxisExtent: 250),
                   itemCount: AppConstants.wallpapers.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return ClipRRect(
-                      borderRadius: BorderRadius.circular(15),
-                      child: Image.asset(
-                        AppConstants.wallpapers[index],
-                        fit: BoxFit.cover,
-                        height: 250,
+                    return GestureDetector(
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => MyWallPreview(
+                                    imgUrl: AppConstants.wallpapers[index],
+                                  ))),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Image.asset(
+                          AppConstants.wallpapers[index],
+                          fit: BoxFit.cover,
+                          height: 250,
+                        ),
                       ),
                     );
                   },
