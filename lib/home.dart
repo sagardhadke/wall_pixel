@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wall_pixel/app_constants.dart';
+import 'package:wall_pixel/wall_categories.dart';
 
 class MyHome extends StatelessWidget {
   const MyHome({super.key});
@@ -52,13 +53,19 @@ class MyHome extends StatelessWidget {
                     itemBuilder: (context, index) {
                       return Padding(
                         padding: const EdgeInsets.only(right: 10),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Image.asset(
-                            AppConstants.wallpapers[index],
-                            width: 150,
-                            height: 150,
-                            fit: BoxFit.cover,
+                        child: InkWell(
+                          onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MyWallCategories())),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Image.asset(
+                              AppConstants.wallpapers[index],
+                              width: 150,
+                              height: 150,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       );
